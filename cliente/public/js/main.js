@@ -72,7 +72,7 @@
     }
 
     /*------ Hero slider 1 ----*/
-    $(".hero-slider-1").slick({
+    $(".hero-slider-1").not('.slick-initialized').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         fade: true,
@@ -91,7 +91,7 @@
         var sliderID = "#" + id;
         var appendArrowsClassName = "#" + id + "-arrows";
 
-        $(sliderID).slick({
+        $(sliderID).not('.slick-initialized').slick({
             dots: false,
             infinite: true,
             speed: 1000,
@@ -136,7 +136,7 @@
         var sliderID = "#" + id;
         var appendArrowsClassName = "#" + id + "-arrows";
 
-        $(sliderID).slick({
+        $(sliderID).not('.slick-initialized').slick({
             dots: false,
             infinite: true,
             speed: 1000,
@@ -181,7 +181,7 @@
         var sliderID = "#" + id;
         var appendArrowsClassName = "#" + id + "-arrows";
 
-        $(sliderID).slick({
+        $(sliderID).not('.slick-initialized').slick({
             dots: false,
             infinite: true,
             speed: 1000,
@@ -218,7 +218,7 @@
         var sliderID = "#" + id;
         var appendArrowsClassName = "#" + id + "-arrows";
 
-        $(sliderID).slick({
+        $(sliderID).not('.slick-initialized').slick({
             dots: false,
             infinite: true,
             speed: 1000,
@@ -253,7 +253,7 @@
     /*Fix Bootstrap 5 tab & slick slider*/
 
     $('button[data-bs-toggle="tab"]').on("shown.bs.tab", function (e) {
-        $(".carausel-4-columns").slick("setPosition");
+        $(".carausel-4-columns").not('.slick-initialized').slick("setPosition");
     });
 
     /*------ Timer Countdown ----*/
@@ -267,7 +267,7 @@
     });
 
     /*------ Product slider active 1 ----*/
-    $(".product-slider-active-1").slick({
+    $(".product-slider-active-1").not('.slick-initialized').slick({
         slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
@@ -306,7 +306,7 @@
     });
 
     /*------ Testimonial active 1 ----*/
-    $(".testimonial-active-1").slick({
+    $(".testimonial-active-1").not('.slick-initialized').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         fade: false,
@@ -344,7 +344,7 @@
     });
 
     /*------ Testimonial active 3 ----*/
-    $(".testimonial-active-3").slick({
+    $(".testimonial-active-3").not('.slick-initialized').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         fade: false,
@@ -380,7 +380,7 @@
     });
 
     /*------ Categories slider 1 ----*/
-    $(".categories-slider-1").slick({
+    $(".categories-slider-1").not('.slick-initialized').slick({
         slidesToShow: 6,
         slidesToScroll: 1,
         fade: false,
@@ -491,7 +491,7 @@
     /*-------------------------------------
         Product details big image slider
     ---------------------------------------*/
-    $(".pro-dec-big-img-slider").slick({
+    $(".pro-dec-big-img-slider").not('.slick-initialized').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
@@ -503,7 +503,7 @@
     /*---------------------------------------
         Product details small image slider
     -----------------------------------------*/
-    $(".product-dec-slider-small").slick({
+    $(".product-dec-slider-small").not('.slick-initialized').slick({
         slidesToShow: 4,
         slidesToScroll: 1,
         asNavFor: ".pro-dec-big-img-slider",
@@ -713,10 +713,10 @@
     /*-----Modal----*/
 
     $(".modal").on("shown.bs.modal", function (e) {
-        $(".product-image-slider").slick("setPosition");
-        $(".slider-nav-thumbnails").slick("setPosition");
+        $(".product-image-slider").not('.slick-initialized').slick("setPosition");
+        $(".slider-nav-thumbnails").not('.slick-initialized').slick("setPosition");
 
-        $(".product-image-slider .slick-active img").elevateZoom({
+        $(".product-image-slider .not('.slick-initialized').slick-active img").elevateZoom({
             zoomType: "inner",
             cursor: "crosshair",
             zoomWindowFadeIn: 500,

@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script';
 
 export default function Document() {
   return (
@@ -25,29 +26,31 @@ export default function Document() {
           <meta name="twitter:creator" content="@efigas_oficial" />
           <link rel="stylesheet" href="css/plugins/animate.min.css" />
           <link rel="stylesheet" href="css/main.css?v=5.3" />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"/> 
+
       </Head>
       <body>
         <Main />
-        {/* <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-        <script src="js/vendor/jquery-3.6.0.min.js"></script>
-        <script src="js/vendor/jquery-migrate-3.3.0.min.js"></script> */}
-        <script src="js/vendor/bootstrap.bundle.min.js"></script>
-        {/* <script src="js/plugins/slick.js"></script>
-        <script src="js/plugins/jquery.syotimer.min.js"></script>
-        <script src="js/plugins/waypoints.js"></script>
-        <script src="js/plugins/wow.js"></script>
-        <script src="js/plugins/perfect-scrollbar.js"></script>
-        <script src="js/plugins/magnific-popup.js"></script>
-        <script src="js/plugins/select2.min.js"></script>
-        <script src="js/plugins/counterup.js"></script>
-        <script src="js/plugins/jquery.countdown.min.js"></script>
-        <script src="js/plugins/images-loaded.js"></script>
-        <script src="js/plugins/isotope.js"></script>
-        <script src="js/plugins/scrollup.js"></script>
-        <script src="js/plugins/jquery.vticker-min.js"></script>
-        <script src="js/plugins/jquery.theia.sticky.js"></script>
-        <script src="js/plugins/jquery.elevatezoom.js"></script> */}
-        <script src="js/main.js?v=5.3"></script>
+        {/* <Script src="js/vendor/jquery-3.6.0.min.js" strategy="afterInteractive"></Script>
+        <Script src="js/vendor/modernizr-3.6.0.min.js" strategy="afterInteractive"></Script>
+        <Script src="js/vendor/jquery-migrate-3.3.0.min.js" strategy="afterInteractive"></Script>
+        <Script src="js/vendor/bootstrap.bundle.min.js" strategy="afterInteractive"></Script>
+        <Script src="js/plugins/slick.js" strategy="afterInteractive"></Script>
+        <Script src="js/plugins/jquery.syotimer.min.js" strategy="afterInteractive"></Script>
+        <Script src="js/plugins/waypoints.js" strategy="afterInteractive"></Script>
+        <Script src="js/plugins/wow.js" strategy="afterInteractive"></Script>
+        <Script src="js/plugins/perfect-scrollbar.js" strategy="afterInteractive"></Script>
+        <Script src="js/plugins/magnific-popup.js" strategy="afterInteractive"></Script>
+        <Script src="js/plugins/select2.min.js" strategy="afterInteractive"></Script>
+        <Script src="js/plugins/counterup.js" strategy="afterInteractive"></Script>
+        <Script src="js/plugins/jquery.countdown.min.js" strategy="afterInteractive"></Script>
+        <Script src="js/plugins/images-loaded.js" strategy="afterInteractive"></Script>
+        <Script src="js/plugins/isotope.js" strategy="afterInteractive"></Script>
+        <Script src="js/plugins/scrollup.js" strategy="afterInteractive"></Script>
+        <Script src="js/plugins/jquery.vticker-min.js" strategy="afterInteractive"></Script>
+        <Script src="js/plugins/jquery.theia.sticky.js" strategy="afterInteractive"></Script>
+        <Script src="js/plugins/jquery.elevatezoom.js" strategy="afterInteractive"></Script>
+        <Script src="js/main.js?v=5.3" strategy="afterInteractive"></Script> */}
         <NextScript />
       </body>
     </Html>

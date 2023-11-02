@@ -1,4 +1,28 @@
+import { useEffect } from "react"
+import $ from 'jquery';
+ 
+
 function Header() {
+
+    // useEffect(()=>{
+    //     var header = $(".sticky-bar");
+    //     var win = $(window);
+    
+    //     win.on("scroll", function () {
+    //       var scroll = win.scrollTop();
+    //       if (scroll < 200) {
+    //         header.removeClass("stick");
+    //         $(".header-style-2 .categories-dropdown-active-large").removeClass("open");
+    //         $(".header-style-2 .categories-button-active").removeClass("open");
+    //       } else {
+    //         header.addClass("stick");
+    //       }
+    //     });
+    
+    //     return () => {
+    //       win.off("scroll");
+    //     };
+    // },[])
   return (
     <>  
         <header className="header-area header-style-1 header-height-2">
@@ -512,7 +536,7 @@ function Header() {
 
         {/* start mobile */}
 
-    {/* <div className="mobile-header-active mobile-header-wrapper-style">
+     <div className="mobile-header-active mobile-header-wrapper-style">
         <div className="mobile-header-wrapper-inner">
             <div className="mobile-header-top">
                 <div className="mobile-header-logo">
@@ -776,7 +800,7 @@ function Header() {
                 <div className="site-copyright">2023 Todos los derechos reservados EFIGAS.</div>
             </div>
         </div>
-    </div> */}
+    </div> 
 
 
 
