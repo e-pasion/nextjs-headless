@@ -31,26 +31,6 @@ export default function Document() {
       </Head>
       <body>
         <Main />
-        {/* <Script src="js/vendor/jquery-3.6.0.min.js" strategy="afterInteractive"></Script>
-        <Script src="js/vendor/modernizr-3.6.0.min.js" strategy="afterInteractive"></Script>
-        <Script src="js/vendor/jquery-migrate-3.3.0.min.js" strategy="afterInteractive"></Script>
-        <Script src="js/vendor/bootstrap.bundle.min.js" strategy="afterInteractive"></Script>
-        <Script src="js/plugins/slick.js" strategy="afterInteractive"></Script>
-        <Script src="js/plugins/jquery.syotimer.min.js" strategy="afterInteractive"></Script>
-        <Script src="js/plugins/waypoints.js" strategy="afterInteractive"></Script>
-        <Script src="js/plugins/wow.js" strategy="afterInteractive"></Script>
-        <Script src="js/plugins/perfect-scrollbar.js" strategy="afterInteractive"></Script>
-        <Script src="js/plugins/magnific-popup.js" strategy="afterInteractive"></Script>
-        <Script src="js/plugins/select2.min.js" strategy="afterInteractive"></Script>
-        <Script src="js/plugins/counterup.js" strategy="afterInteractive"></Script>
-        <Script src="js/plugins/jquery.countdown.min.js" strategy="afterInteractive"></Script>
-        <Script src="js/plugins/images-loaded.js" strategy="afterInteractive"></Script>
-        <Script src="js/plugins/isotope.js" strategy="afterInteractive"></Script>
-        <Script src="js/plugins/scrollup.js" strategy="afterInteractive"></Script>
-        <Script src="js/plugins/jquery.vticker-min.js" strategy="afterInteractive"></Script>
-        <Script src="js/plugins/jquery.theia.sticky.js" strategy="afterInteractive"></Script>
-        <Script src="js/plugins/jquery.elevatezoom.js" strategy="afterInteractive"></Script>
-        <Script src="js/main.js?v=5.3" strategy="afterInteractive"></Script> */}
         <NextScript />
       </body>
     </Html>

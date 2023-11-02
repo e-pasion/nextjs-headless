@@ -4,6 +4,8 @@ import Header from '@/components/Header'
 import { useEffect } from 'react';
 import Loading from '@/components/Loading';
 import Modal from '@/components/Modal';
+import { ApolloProvider } from '@apollo/client';
+import client from '@/libs/apollo-client';
 
 
 
@@ -63,13 +65,16 @@ export default function App({ Component, pageProps }) {
   
 
   return<>
-  
-    <Modal/>
-    <Loading/>
-      <Header/>
+    <ApolloProvider client={client}>
+    <Header/>
+      <Loading/>
       <Component {...pageProps} />
       <FabButton/>
       <Footer/>
+      <Modal/>
+    </ApolloProvider>
+      
+
   </> 
   
 }

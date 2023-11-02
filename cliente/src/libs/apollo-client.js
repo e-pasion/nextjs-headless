@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost/wp/wordpress/graphql', // Reemplaza con la URL de tu servidor GraphQL
+  uri: 'http://localhost/wp/wordpress/graphql', 
 });
 
 const client = new ApolloClient({

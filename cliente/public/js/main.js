@@ -1,13 +1,14 @@
 (function ($) {
     ("use strict");
     // Page loading
-    $(window).on("load", function () {
-        $("#preloader-active").delay(450).fadeOut("slow");
-        $("body").delay(450).css({
-            overflow: "visible"
-        });
-        $("#onloadModal").modal("show");
-    });
+    // $(window).on("load", function () {
+    //     $("#preloader-active").delay(450).fadeOut("slow");
+    //     $("body").delay(450).css({
+    //         overflow: "visible"
+    //     });
+    //     $("#onloadModal").modal("show");
+    // });
+    $("#onloadModal").modal("show");
     /*-----------------
         Menu Stick
     -----------------*/
@@ -716,7 +717,7 @@
         $(".product-image-slider").not('.slick-initialized').slick("setPosition");
         $(".slider-nav-thumbnails").not('.slick-initialized').slick("setPosition");
 
-        $(".product-image-slider .not('.slick-initialized').slick-active img").elevateZoom({
+        $(".product-image-slider .slick-active img").elevateZoom({
             zoomType: "inner",
             cursor: "crosshair",
             zoomWindowFadeIn: 500,
