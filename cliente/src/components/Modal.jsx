@@ -8,7 +8,6 @@ function Modal() {
 
 
     if (!loading){
-        console.log(data.modal.fields.imagen.link);
         console.log(data);
         //Si el modal cargo, hacer que la ventana de carga desaparezca
         $('#preloader-active').delay(2000).fadeOut('slow');

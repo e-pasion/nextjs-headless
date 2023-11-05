@@ -1,35 +1,24 @@
-import { useEffect } from "react"
-import $ from 'jquery';
- 
+import { getHeader } from "@/libs/querys";
+import { useQuery } from "@apollo/client";
+
 
 function Header() {
+   
+    const { loading, error, data } = useQuery(getHeader);
 
-    // useEffect(()=>{
-    //     var header = $(".sticky-bar");
-    //     var win = $(window);
+
+    if(!loading) {
+        console.log(data);
+    };
+
     
-    //     win.on("scroll", function () {
-    //       var scroll = win.scrollTop();
-    //       if (scroll < 200) {
-    //         header.removeClass("stick");
-    //         $(".header-style-2 .categories-dropdown-active-large").removeClass("open");
-    //         $(".header-style-2 .categories-button-active").removeClass("open");
-    //       } else {
-    //         header.addClass("stick");
-    //       }
-    //     });
-    
-    //     return () => {
-    //       win.off("scroll");
-    //     };
-    // },[])
   return (
     <>  
         <header className="header-area header-style-1 header-height-2">
                 <div className="header-info mobile-promotion">
                     <ul className="ml-10">
-                        <li><a href="#">¡Paga aquí tu factura!</a></li>
-                        <li><a href="#">Recibe tu factura digital</a></li>
+                        <li><a href="#">{!loading  && data.header.headerFields.texto1}</a></li>
+                        <li><a href="#">{!loading && data.header.headerFields.texto2}</a></li>
                     </ul>
                 </div>
                 <div className="header-top header-top-ptb-1 d-none d-lg-block">
@@ -38,8 +27,8 @@ function Header() {
                             <div className="col-xl-4 col-lg-5">
                                 <div className="header-info">
                                     <ul>
-                                        <li><a href="#">¡Paga aquí tu factura!</a></li>
-                                        <li><a href="#">Recibe tu factura digital</a></li>
+                                        <li><a href="#">{!loading  && data.header.headerFields.texto1}</a></li>
+                                        <li><a href="#">{!loading && data.header.headerFields.texto2}</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -47,16 +36,16 @@ function Header() {
                                 <div className="text-center">
                                     <div id="news-flash" className="d-inline-block">
                                         <ul>
-                                            <li>¿Quiéres agua caliente? <a href="#" className="text-success">Ingresa aquí</a></li>
-                                            <li>¿Quiéres agua caliente? <a href="#" className="text-success">Ingresa aquí</a></li>
-                                            <li>¿Quiéres agua caliente? <a href="#" className="text-success">Ingresa aquí</a></li>
+                                            <li>{!loading && data.header.headerFields.texto3} <a href="#" className="text-success">{!loading && data.header.headerFields.texto4}</a></li>
+                                            <li>{!loading && data.header.headerFields.texto3} <a href="#" className="text-success">{!loading && data.header.headerFields.texto4}</a></li>
+                                            <li>{!loading && data.header.headerFields.texto3} <a href="#" className="text-success">{!loading && data.header.headerFields.texto4}</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-xl-4 col-lg-3">
                                 <div className="header-info header-info-right">
-                                    <a href="#" className="btn btn-xs font-lg btn-rounded btn-brilla">Simula tu crédito Brilla</a>
+                                    <a href="#" className="btn btn-xs font-lg btn-rounded btn-brilla">{!loading && data.header.headerFields.textoBoton}</a>
                                 </div>
                             </div>
                         </div>
@@ -83,14 +72,14 @@ function Header() {
                                             <option>Cumplimiento</option>
                                             <option>Canales de atención</option>
                                         </select>
-                                        <input type="text" placeholder="Buscar..." />
+                                        <input type="text" placeholder={!loading && data.header.headerFields.textoBuscar} />
                                     </form>
                                 </div>
 
                             </div>
                             <div className="col-xl-4 col-lg-4 text-center">
                                 <div className="logo logo-width-1">
-                                    <a href="index.html"><img src="imgs/theme/logo.svg" alt="logo" /></a>
+                                    <a href="index.html"><img src={!loading && data.header.headerFields.logo.link} alt="logo" /></a>
                                 </div>
                             </div>
                             <div className="header-right col-xl-4 col-lg-2">
@@ -99,16 +88,16 @@ function Header() {
                                         <div className="header-action-icon-2">
                                             <a href="#">
                                                 <img className="svgInject svg-info" alt="Línea de atención"
-                                                    src="imgs/theme/icons/icon-headphone.svg" />
+                                                    src={!loading && data.header.headerFields.icono1.link} />
                                             </a>
-                                            <a href="#"><span className="lable">018000966344</span></a>
+                                            <a href="#"><span className="lable">{!loading && data.header.headerFields.texto5}</span></a>
                                         </div>
                                         <div className="header-action-icon-2">
                                             <a href="#">
                                                 <img className="svgInject svg-info" alt="Canales"
-                                                    src="imgs/theme/icons/icon-information.svg" />
+                                                    src={!loading && data.header.headerFields.icono2.link} />
                                             </a>
-                                            <a href="#"><span className="lable">Canales de atención</span></a>
+                                            <a href="#"><span className="lable">{!loading && data.header.headerFields.texto6}</span></a>
                                         </div>
                                         <div className="header-action-icon-2 d-lg-block d-xl-none">
                                             <a href="#">
@@ -126,7 +115,7 @@ function Header() {
                     <div className="container-fluid">
                         <div className="header-wrap header-space-between position-relative">
                             <div className="logo logo-width-1 d-block d-lg-none">
-                                <a href="index.html"><img src="imgs/theme/logo.svg" alt="logo" /></a>
+                                <a href="index.html"><img src={!loading && data.header.headerFields.logo.link} alt="logo" /></a>
                             </div>
                             <div className="header-nav d-none d-lg-flex">
                                 <div className="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
@@ -241,7 +230,7 @@ function Header() {
                                                                 <p className="mb-15">Escríbenos y adquiere tu calentador
                                                                 </p>
                                                                 <div className="menu-banner-btn">
-                                                                    <a href="#" className="text-secondary">Ingresa aquí</a>
+                                                                    <a href="#" className="text-secondary">{!loading && data.header.headerFields.texto4}</a>
                                                                 </div>
 
                                                             </div>
@@ -519,12 +508,12 @@ function Header() {
                                 <div className="header-action-2">
                                     <div className="header-action-icon-2">
                                         <a href="#">
-                                            <img alt="Línea de atención" src="imgs/theme/icons/icon-headphone.svg" />
+                                            <img alt="Línea de atención" src={!loading && data.header.headerFields.icono1.link} />
                                         </a>
                                     </div>
                                     <div className="header-action-icon-2">
                                         <a href="#">
-                                            <img alt="Canales de atención" src="imgs/theme/icons/icon-information.svg" />
+                                            <img alt="Canales de atención" src={!loading && data.header.headerFields.icono2.link} />
                                         </a>
                                     </div>
                                 </div>
@@ -540,7 +529,7 @@ function Header() {
         <div className="mobile-header-wrapper-inner">
             <div className="mobile-header-top">
                 <div className="mobile-header-logo">
-                    <a href="#"><img src="imgs/theme/logo-2.svg" alt="logo" /></a>
+                    <a href="#"><img src={!loading && data.header.headerFields.logoCelular.link} alt="logo" /></a>
                 </div>
                 <div className="mobile-menu-close close-style-wrap close-style-position-inherit">
                     <button className="close-style search-close">
@@ -552,7 +541,7 @@ function Header() {
             <div className="mobile-header-content-area">
                 <div className="mobile-search search-style-3 mobile-header-border">
                     <form action="#">
-                        <input type="text" className="rounded" placeholder="Buscar…" />
+                        <input type="text" className="rounded" placeholder={!loading && data.header.headerFields.textoBuscar} />
                         <button type="submit"><i className="fi-rs-search"></i></button>
                     </form>
                 </div>
@@ -785,8 +774,8 @@ function Header() {
                             className="font-md text-muted">Atención en línea</span></p>
                 </div>
                 <div className="text-center mb-50">
-                    <p className="text-secondary fw-600">¿Quiéres agua caliente? <a href="#">Ingresa aquí</a></p>
-                    <a href="#" className="btn btn-xs font-lg btn-rounded btn-brilla">Simula tu crédito Brilla</a>
+                    <p className="text-secondary fw-600">{!loading && data.header.headerFields.texto3} <a href="#">{!loading && data.header.headerFields.texto4}</a></p>
+                    <a href="#" className="btn btn-xs font-lg btn-rounded btn-brilla">{!loading && data.header.headerFields.textoBoton}</a>
                 </div>
                 <div className="mobile-social-icon mb-20">
                     <h6 className="mb-15">Síguenos en</h6>
