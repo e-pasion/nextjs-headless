@@ -1,28 +1,28 @@
-function Hero3Mid() {
+function Hero3Mid({ texto1="",texto2="",texto3="",qr="",background="" }) {
   return (
     <div
       className="single-hero-slider single-animation-wrap"
-      style={{ backgroundImage: "url(imgs/slider/slider-02.jpg)" }}
+      style={{ backgroundImage: `url(${background})` }}
     >
       <div className="slider-content row">
         <h4
           className="col-md-5 offset-md-7 font-lg font-weight-bold text-white p-2 mb-20"
           style={{ backgroundColor: "#29265b" }}
         >
-          "Manual del eterno emprendedor"
+          {texto1}
         </h4>
         <h4 className="col-md-5 offset-md-7 font-lg font-weight-bold text-white mt-5 mb-10">
-          ¿Quieres potenciar tu negocio o proyectos gastronómicos?
+          {texto2}
           <img
             className="w-25 rounded-0 col-6 mt-10"
-            src="imgs/slider/qr-tulio.png"
+            src={qr}
             alt="QR"
           />
         </h4>
 
         <div className="bg-success col-md-5 offset-md-7">
           <span className="font-weight-bold text-secondary">
-            Escanea el QR y gánate una entrada al evento
+            {texto3}
           </span>
         </div>
       </div>

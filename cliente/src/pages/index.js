@@ -7,6 +7,7 @@ import Categories from '@/components/Categories'
 import Business from '@/components/Business'
 import Brilla from '@/components/Brilla'
 import PromoBanners from '@/components/PromoBanners'
+import Modal from '@/components/Modal'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,6 +24,7 @@ export default function Home() {
 
 
       <main className='main'>
+        <Modal/>
         <Hero/>
         <Categories/>
         <Articles/>

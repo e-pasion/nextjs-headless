@@ -71,8 +71,7 @@ export default function App({ Component, pageProps }) {
       <Component {...pageProps} />
       <FabButton/>
       <Footer/>
-      <Modal/>
-    </ApolloProvider>
+X    </ApolloProvider>
       
 
   </> 

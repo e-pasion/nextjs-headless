@@ -8559,7 +8559,7 @@ h6.post-title {
   border-radius: 30px;
   line-height: 1;
   -ms-flex-line-pack: center;
-  align-content: center;
+  align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -8567,6 +8567,7 @@ h6.post-title {
 
 .mobile-social-icon a img {
   max-width: 16px;
+  max-height: 16px;
 }
 
 .mobile-social-icon a img:hover {

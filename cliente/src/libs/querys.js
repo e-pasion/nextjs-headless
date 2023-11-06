@@ -157,3 +157,234 @@ query getHero3 {
   }
 }
 `
+
+export const getCategorySlider=gql`
+query NewQuery {
+  sliderCategoria(id: "slider-categorias", idType: SLUG) {
+    CategoriaFields {
+      texto4
+      texto3
+      texto2
+      texto1
+      icono1 {
+        texto1
+        texto2
+        icono {
+          link
+        }
+      }
+      icono2 {
+        texto1
+        texto2
+        icono {
+          link
+        }
+      }
+      icono3 {
+        texto1
+        texto2
+        icono {
+          link
+        }
+      }
+      icono4 {
+        texto1
+        texto2
+        icono {
+          link
+        }
+      }
+      icono5 {
+        texto1
+        texto2
+        icono {
+          link
+        }
+      }
+      icono6 {
+        texto1
+        texto2
+        icono {
+          link
+        }
+      }
+    }
+  }
+}
+`
+
+export const getBusiness=gql`
+query NewQuery {
+  business(id: "business", idType: SLUG) {
+    businessFields {
+      business1 {
+        texto1
+        texto2
+        icono {
+          link
+        }
+      }
+      business2 {
+        texto2
+        texto1
+        icono {
+          link
+        }
+      }
+      business3 {
+        texto2
+        texto1
+        icono {
+          link
+        }
+      }
+      business4 {
+        texto1
+        texto2
+        icono {
+          link
+        }
+      }
+    }
+  }
+}
+`
+
+
+export const getBrilla=gql`
+query NewQuery {
+  brilla(id: "brilla", idType: SLUG) {
+    brillaFields {
+      logo {
+        link
+      }
+      campo1 {
+        texto
+        icono {
+          link
+        }
+      }
+      campo2 {
+        texto
+        icono {
+          link
+        }
+      }
+      campo3 {
+        texto
+        icono {
+          link
+        }
+      }
+      campo4 {
+        texto
+        icono {
+          link
+        }
+      }
+    }
+  }
+}
+`
+
+export const getBanners=gql`
+query NewQuery {
+  banner(id: "banners", idType: SLUG) {
+    bannerFields {
+      banner1 {
+        texto1
+        texto2
+        texto3
+        textoBoton
+        imagen {
+          link
+        }
+      }
+      banner2 {
+        texto1
+        texto2
+        texto3
+        texto4
+        textoBoton
+        imagen {
+          link
+        }
+      }
+      banner3 {
+        texto1
+        texto2
+        texto3
+        texto4
+        texto5
+        textoBoton
+        imagen {
+          link
+        }
+      }
+    }
+  }
+}
+`
+
+
+export const getFooterSuperior=gql`
+query NewQuery {
+  footer(id: "footer-superior", idType: SLUG) {
+    footerFields {
+      texto1
+      texto2
+      texto3
+      texto4
+      texto5
+      icono1 {
+        link
+      }
+      icono2 {
+        link
+      }
+      logo1 {
+        link
+      }
+      logo2 {
+        link
+      }
+      socialMedia {
+        icono1 {
+          link
+        }
+        icono2 {
+          link
+        }
+        icono3 {
+          link
+        }
+        icono4 {
+          link
+        }
+        icono5 {
+          link
+        }
+        texto
+      }
+    }
+  }
+}
+
+`
+
+export const getFooterInferior=gql`
+query NewQuery {
+  footer(id: "footer-inferior", idType: SLUG) {
+    footerInferiorFields {
+      texto1
+      texto2
+      texto3
+      texto4
+      texto5
+      texto6
+      texto7
+    }
+  }
+}
+
+`

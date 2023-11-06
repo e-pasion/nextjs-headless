@@ -1,23 +1,23 @@
-function Hero1XL() {
+function Hero1XL({texto1="",texto2="",texto3="",texto4="",texto5="",textoBoton="",background=""}) {
   return (
     <div className="col-xl-4 d-none d-xl-block">
       <div
         className="banner-img style-3 animated animated"
-        style={{ backgroundImage: "url(imgs/banner/banner-side-01.jpg)" }}
+        style={{ backgroundImage: `url(${background})` }}
       >
         <div className="banner-text mt-50">
           <h2 className="mb-50 text-white">
-            Atención <br />
-            en
-            <span className="text-brand">línea</span>
+            {texto1} <br />
+            {texto2}
+            <span className="text-brand">{texto3}</span>
           </h2>
           <p className="mt-150 mb-20 text-white font-xl">
-            Lunes a viernes
+            {texto4}
             <br />
-            de 8:00 am a 6:00 pm
+            {texto5}
           </p>
           <a href="#" className="btn rounded text-secondary">
-            ir al chat <i className="fi-rs-arrow-right"></i>
+            {textoBoton} <i className="fi-rs-arrow-right"></i>
           </a>
         </div>
       </div>

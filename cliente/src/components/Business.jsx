@@ -1,4 +1,14 @@
+import { getBusiness } from "@/libs/querys";
+import { useQuery } from "@apollo/client";
+
 function Business() {
+    const { loading, error, data } = useQuery(getBusiness);
+
+
+    if(!loading) {
+        console.log(data);
+    };
+
   return (
     <section className="featured section-padding">
     <div className="container">
@@ -7,11 +17,11 @@ function Business() {
                 <div className="banner-left-icon flex-fill d-flex align-items-center wow animate__animated animate__fadeInUp"
                     data-wow-delay="0">
                     <div className="banner-icon">
-                        <img src="imgs/theme/icons/category-7.svg" alt="" />
+                        <img src={data?.business?.businessFields?.business1?.icono?.link} alt="" />
                     </div>
                     <div className="banner-text">
-                        <h3 className="icon-box-title">Gobierno corporativo</h3>
-                        <p>Quiénes somos y transparencia</p>
+                        <h3 className="icon-box-title">{data?.business?.businessFields?.business1?.texto1}</h3>
+                        <p>{data?.business?.businessFields?.business1?.texto2}</p>
                     </div>
                 </div>
             </div>
@@ -19,11 +29,11 @@ function Business() {
                 <div className="banner-left-icon flex-fill d-flex align-items-center wow animate__animated animate__fadeInUp"
                     data-wow-delay=".1s">
                     <div className="banner-icon">
-                        <img src="imgs/theme/icons/category-8.svg" alt="" />
+                        <img src={data?.business?.businessFields?.business2?.icono?.link} alt="" />
                     </div>
                     <div className="banner-text">
-                        <h3 className="icon-box-title">Aliados estratégicos</h3>
-                        <p>Nuestros aliados y proveedores</p>
+                        <h3 className="icon-box-title">{data?.business?.businessFields?.business2?.texto1}</h3>
+                        <p>{data?.business?.businessFields?.business2?.texto2}</p>
                     </div>
                 </div>
             </div>
@@ -31,11 +41,11 @@ function Business() {
                 <div className="banner-left-icon flex-fill d-flex align-items-center wow animate__animated animate__fadeInUp"
                     data-wow-delay=".1s">
                     <div className="banner-icon">
-                        <img src="imgs/theme/icons/category-9.svg" alt="" />
+                        <img src={data?.business?.businessFields?.business3?.icono?.link} alt="" />
                     </div>
                     <div className="banner-text">
-                        <h3 className="icon-box-title">Cumplimiento</h3>
-                        <p>Regulatorio y normativo</p>
+                        <h3 className="icon-box-title">{data?.business?.businessFields?.business3?.texto1}</h3>
+                        <p>{data?.business?.businessFields?.business3?.texto2}</p>
                     </div>
                 </div>
             </div>
@@ -43,11 +53,11 @@ function Business() {
                 <div className="banner-left-icon flex-fill d-flex align-items-center wow animate__animated animate__fadeInUp"
                     data-wow-delay=".3s">
                     <div className="banner-icon">
-                        <img src="imgs/theme/icons/category-10.svg" alt="" />
+                        <img src={data?.business?.businessFields?.business4?.icono?.link} alt="" />
                     </div>
                     <div className="banner-text">
-                        <h3 className="icon-box-title">Canales de atención</h3>
-                        <p>Oficina virtual y líneas de atención</p>
+                        <h3 className="icon-box-title">{data?.business?.businessFields?.business4?.texto1}</h3>
+                        <p>{data?.business?.businessFields?.business4?.texto2}</p>
                     </div>
                 </div>
             </div>

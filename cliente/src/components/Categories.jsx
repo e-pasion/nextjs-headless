@@ -1,18 +1,30 @@
+import { getCategorySlider } from "@/libs/querys";
+import { useQuery } from "@apollo/client";
+
 function Categories() {
+   
+    const { loading, error, data } = useQuery(getCategorySlider);
+
+
+    if(!loading) {
+        console.log(data);
+    };
+
+
   return (
     <section className="popular-categories section-padding">
     <div className="container">
         <div className="section-title">
             <div className="title rounded bg-primary py-3 px-5">
-                <h3 className="text-white">¿Qué te puedo ofrecer?</h3>
+                <h3 className="text-white">{data?.sliderCategoria?.CategoriaFields?.texto1}</h3>
                 <a className="text-white mr-30" href="#">
-                    Efisoluciones
+                    {data?.sliderCategoria?.CategoriaFields?.texto2}
                 </a>
                 <a className=" text-white mr-30" href="#">
-                    Conoce tu factura
+                {data?.sliderCategoria?.CategoriaFields?.texto3}
                 </a>
                 <a className=" text-white" href="page.html">
-                    Revisión técnica reglamentaria
+                {data?.sliderCategoria?.CategoriaFields?.texto4}
                 </a>
             </div>
             <div className="slider-arrow slider-arrow-2 flex-right carausel-4-columns-arrow"
@@ -22,57 +34,57 @@ function Categories() {
             <div className="carausel-4-columns" id="carausel-4-columns">
                 <div className="card-1">
                     <figure className="img-hover-scale overflow-hidden">
-                        <a href="#"><img src="imgs/theme/icons/category-1.svg" alt="" /></a>
+                        <a href="#"><img src={data?.sliderCategoria?.CategoriaFields?.icono1?.icono?.link} alt="" /></a>
                     </figure>
                     <h6>
-                        <a href="#">Hogar</a><br />
+                        <a href="#"> {data?.sliderCategoria?.CategoriaFields?.icono1?.texto1}</a><br />
                     </h6>
-                    <p>Servicios y financiación</p>
+                    <p>{data?.sliderCategoria?.CategoriaFields?.icono1?.texto2}</p>
                 </div>
                 <div className="card-1">
                     <figure className="img-hover-scale overflow-hidden">
-                        <a href="#"><img src="imgs/theme/icons/category-2.svg" alt="" /></a>
+                        <a href="#"><img src={data?.sliderCategoria?.CategoriaFields?.icono2?.icono?.link} alt="" /></a>
                     </figure>
                     <h6>
-                        <a href="#">Comercio</a><br />
+                        <a href="#">{data?.sliderCategoria?.CategoriaFields?.icono2?.texto1}</a><br />
                     </h6>
-                    <p>Efisoluciones</p>
+                    <p>{data?.sliderCategoria?.CategoriaFields?.icono2?.texto2}</p>
                 </div>
                 <div className="card-1">
                     <figure className="img-hover-scale overflow-hidden">
-                        <a href="#"><img src="imgs/theme/icons/category-3.svg" alt="" /></a>
+                        <a href="#"><img src={data?.sliderCategoria?.CategoriaFields?.icono3?.icono?.link} alt="" /></a>
                     </figure>
                     <h6>
-                        <a href="s#">Industrias</a><br />
+                        <a href="s#">{data?.sliderCategoria?.CategoriaFields?.icono3?.texto1}</a><br />
                     </h6>
-                    <p>Soluciones y financiación</p>
+                    <p>{data?.sliderCategoria?.CategoriaFields?.icono3?.texto2}</p>
                 </div>
                 <div className="card-1">
                     <figure className="img-hover-scale overflow-hidden">
-                        <a href="#"><img src="imgs/theme/icons/category-4.svg" alt="" /></a>
+                        <a href="#"><img src={data?.sliderCategoria?.CategoriaFields?.icono4?.icono?.link} alt="" /></a>
                     </figure>
                     <h6>
-                        <a href="#">Constructoras</a><br />
+                        <a href="#">{data?.sliderCategoria?.CategoriaFields?.icono4?.texto1}</a><br />
                     </h6>
-                    <p>Acompañamos tu proyecto</p>
+                    <p>{data?.sliderCategoria?.CategoriaFields?.icono4?.texto2}</p>
                 </div>
                 <div className="card-1">
                     <figure className="img-hover-scale overflow-hidden">
-                        <a href="#"><img src="imgs/theme/icons/category-5.svg" alt="" /></a>
+                        <a href="#"><img src={data?.sliderCategoria?.CategoriaFields?.icono5?.icono?.link} alt="" /></a>
                     </figure>
                     <h6>
-                        <a href="#">Vehicular</a><br />
+                        <a href="#">{data?.sliderCategoria?.CategoriaFields?.icono5?.texto1}</a><br />
                     </h6>
-                    <p>Gas Natural Vehicular</p>
+                    <p>{data?.sliderCategoria?.CategoriaFields?.icono5?.texto2}</p>
                 </div>
                 <div className="card-1">
                     <figure className="img-hover-scale overflow-hidden">
-                        <a href="#"><img src="imgs/theme/icons/category-6.svg" alt="" /></a>
+                        <a href="#"><img src={data?.sliderCategoria?.CategoriaFields?.icono6?.icono?.link} alt="" /></a>
                     </figure>
                     <h6>
-                        <a href="#">Servicio seguro</a><br />
+                        <a href="#">{data?.sliderCategoria?.CategoriaFields?.icono6?.texto1}</a><br />
                     </h6>
-                    <p>Uso seguro del gas natural</p>
+                    <p>{data?.sliderCategoria?.CategoriaFields?.icono6?.texto2}</p>
                 </div>
             </div>
         </div>

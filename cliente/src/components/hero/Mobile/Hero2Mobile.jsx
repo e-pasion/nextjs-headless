@@ -1,24 +1,24 @@
-function Hero2Mobile() {
+function Hero2Mobile({background="",texto1="",texto2="",texto3="",texto4="",textoBoton=""}) {
   return (
     <div
       className="single-hero-slider single-animation-wrap"
-      style={{ backgroundImage: "url(imgs/slider/slider-01.jpg)" }}
+      style={{ backgroundImage: `url(${background})` }}
     >
       <div className="slider-content ">
         <h2 className="display-4 font-weight-bold text-white mt-10 mb-50">
           <span className="text-secondary border-text-white">
-            -Contaminación
+            {texto1}
           </span>
           <br />
-          +Aire limpio
+          {texto2}
         </h2>
         <span className="gradient-inverted font-lg text-white px-2">
-          Si ya pagas de manera online
+          {texto3}
         </span>
-        <p className="font-weight-bold text-white">Pásate a factura digital</p>
+        <p className="font-weight-bold text-white">{texto4}</p>
         <form className="form-subcriber d-flex">
           <button className="btn text-secondary" type="submit">
-            Inscribirme
+            {textoBoton}
           </button>
         </form>
       </div>
