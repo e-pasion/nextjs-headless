@@ -14,6 +14,7 @@ function Categories() {
   return (
     <section className="popular-categories section-padding">
     <div className="container">
+        
         <div className="section-title">
             <div className="title rounded bg-primary py-3 px-5">
                 <h3 className="text-white">{data?.sliderCategoria?.CategoriaFields?.texto1}</h3>

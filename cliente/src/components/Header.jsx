@@ -2,6 +2,9 @@ import { getHeader } from "@/libs/querys";
 import { useQuery } from "@apollo/client";
 
 
+
+
+
 function Header() {
    
     const { loading, error, data } = useQuery(getHeader);
@@ -72,7 +75,7 @@ function Header() {
                                             <option>Cumplimiento</option>
                                             <option>Canales de atención</option>
                                         </select>
-                                        <input type="text" placeholder={!loading && data.header.headerFields.textoBuscar} />
+                                        <input type="text" placeholder={!loading? data.header.headerFields.textoBuscar:""} />
                                     </form>
                                 </div>
 
@@ -541,7 +544,7 @@ function Header() {
             <div className="mobile-header-content-area">
                 <div className="mobile-search search-style-3 mobile-header-border">
                     <form action="#">
-                        <input type="text" className="rounded" placeholder={!loading && data.header.headerFields.textoBuscar} />
+                        <input type="text" className="rounded" placeholder={!loading?data.header.headerFields.textoBuscar:""} />
                         <button type="submit"><i className="fi-rs-search"></i></button>
                     </form>
                 </div>

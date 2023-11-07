@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import Articles from '@/components/Articles'
+import Articles from '@/components/articles/Articles'
 import Hero from '@/components/hero/Hero'
 import Categories from '@/components/Categories'
 import Business from '@/components/Business'
