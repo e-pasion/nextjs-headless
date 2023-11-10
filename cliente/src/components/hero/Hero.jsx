@@ -43,7 +43,7 @@ function Hero() {
                     <div className="home-slide-cover d-block d-md-none">
                         <div className="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
                             <Hero2Mobile background={data2?.hero?.hero2Fields?.imagen?.link} texto1={data2?.hero?.hero2Fields?.texto1} texto2={data2?.hero?.hero2Fields?.texto2} texto3={data2?.hero?.hero2Fields?.texto3} texto4={data2?.hero?.hero2Fields?.texto4} textoBoton={data2?.hero?.hero2Fields?.textoBoton}/>
-                            <Hero3Mobile background={data3?.hero?.hero3Fields?.imagen?.link} texto1={data3?.hero?.hero3Fields?.texto1} texto2={data3?.hero?.hero3Fields?.texto2} texto3={data3?.hero?.hero3Fields?.texto3} qr={data3?.hero?.hero3Fields?.qr?.link}/>
+                            <Hero3Mobile background={data3?.hero?.hero3Fields?.imagenCelular?.link} texto1={data3?.hero?.hero3Fields?.texto1} texto2={data3?.hero?.hero3Fields?.texto2} texto3={data3?.hero?.hero3Fields?.texto3} qr={data3?.hero?.hero3Fields?.qr?.link}/>
                         </div>
                         <div className="slider-arrow hero-slider-1-arrow"></div>
                     </div>

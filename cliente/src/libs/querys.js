@@ -3,8 +3,7 @@ import { gql } from "@apollo/client";
 export const paginatedPost = gql`
   query GetPaginatedPosts($categoryName: String, $offset: Int!, $size: Int!) {
     posts(
-      where: { offsetPagination: { offset: $offset, size: $size }, 
-      categoryName: $categoryName}) {
+      where: { offsetPagination: { offset: $offset, size: $size }, categoryName: $categoryName, categoryNotIn: "195"}) {
       nodes {
         slug
         title
@@ -33,7 +32,7 @@ export const paginatedPost = gql`
 
 export const getCategories= gql`
 query getCategories {
-  categories {
+  categories(where: {exclude: [195]}) {
     nodes {
       name
       slug
@@ -387,4 +386,20 @@ query NewQuery {
   }
 }
 
+`
+
+export const getArticleHeader=gql`
+query getPostHeader {
+  post(id: "post-header", idType: SLUG) {
+    title
+    headerPostFields {
+      texto3
+      texto1
+      texto2
+      icono1 {
+        link
+      }
+    }
+  }
+}
 `

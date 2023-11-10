@@ -1,5 +1,6 @@
 import { getHeader } from "@/libs/querys";
 import { useQuery } from "@apollo/client";
+import Link from "next/link";
 
 
 
@@ -82,7 +83,7 @@ function Header() {
                             </div>
                             <div className="col-xl-4 col-lg-4 text-center">
                                 <div className="logo logo-width-1">
-                                    <a href="index.html"><img src={!loading && data.header.headerFields.logo.link} alt="logo" /></a>
+                                    <Link href="/"><img src={!loading && data.header.headerFields.logo.link} alt="logo" /></Link>
                                 </div>
                             </div>
                             <div className="header-right col-xl-4 col-lg-2">
@@ -118,7 +119,7 @@ function Header() {
                     <div className="container-fluid">
                         <div className="header-wrap header-space-between position-relative">
                             <div className="logo logo-width-1 d-block d-lg-none">
-                                <a href="index.html"><img src={!loading && data.header.headerFields.logo.link} alt="logo" /></a>
+                                <Link href="/"><img src={!loading && data.header.headerFields.logo.link} alt="logo" /></Link>
                             </div>
                             <div className="header-nav d-none d-lg-flex">
                                 <div className="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
@@ -171,7 +172,7 @@ function Header() {
                                                             <li><a href="#">Qué es el gas natural</a></li>
                                                             <li><a href="#">Manual del usuario</a></li>
                                                             <li><a href="#">Uso seguro del gas natural</a></li>
-                                                            <li><a href="page.html">Revisión técnica</a></li>
+                                                            <li><Link href="/page">Revisión técnica</Link></li>
                                                             <li><a href="#">Alianza contra el fraude</a></li>
                                                             <li><a href="#">Planes para un servicio seguro</a></li>
                                                             <li><a href="#">Nuestro equipos de expertos</a></li>
@@ -202,7 +203,7 @@ function Header() {
                                                             <li><a href="#">Calentadores</a></li>
                                                             <li><a href="#">Remodelaciones</a></li>
                                                         </ul>
-                                                        <a className="menu-title mt-50" href="page.html">Revisión Técnica</a>
+                                                        <Link className="menu-title mt-50" href="/page">Revisión Técnica</Link>
                                                         <a className="menu-title mt-25" href="#">Financiación</a>
                                                         <a className="menu-title mt-25" href="#">Seguros</a>
                                                     </li>
@@ -249,7 +250,7 @@ function Header() {
                                                         <div className="btn rounded mb-25">
                                                             <a href="#" className="text-secondary">EFISOLUSIONES</a>
                                                         </div>
-                                                        <a className="menu-title" href="page.html">Revisión técnica</a>
+                                                        <Link className="menu-title" href="/page">Revisión técnica</Link>
                                                         <ul>
                                                             <li><a href="page.html">Por seguridad y cumplimiento <span
                                                                         className="text-secondary">Agenda la revisión</span> de los
@@ -304,7 +305,7 @@ function Header() {
                                                         <div className="btn rounded mb-25">
                                                             <a href="#" className="text-secondary">EFISOLUSIONES</a>
                                                         </div>
-                                                        <a className="menu-title" href="page.html">Revisión técnica</a>
+                                                        <Link className="menu-title" href="/page">Revisión técnica</Link>
                                                         <ul>
                                                             <li><a href="page.html">Por seguridad y cumplimiento <span
                                                                         className="text-secondary">Agenda la revisión</span> de las
@@ -532,7 +533,7 @@ function Header() {
         <div className="mobile-header-wrapper-inner">
             <div className="mobile-header-top">
                 <div className="mobile-header-logo">
-                    <a href="#"><img src={!loading && data.header.headerFields.logoCelular.link} alt="logo" /></a>
+                    <Link href="/"><img src={!loading && data.header.headerFields.logoCelular.link} alt="logo" /></Link>
                 </div>
                 <div className="mobile-menu-close close-style-wrap close-style-position-inherit">
                     <button className="close-style search-close">
@@ -572,7 +573,7 @@ function Header() {
                                             <li><a href="#">Remodelaciones</a></li>
                                         </ul>
                                     </li>
-                                    <li><a className="text-secondary" href="page.html">Revisión Técnica</a></li>
+                                    <li><Link className="text-secondary" href="/page">Revisión Técnica</Link></li>
                                     <li><a className="text-secondary" href="#">Financiación</a></li>
                                     <li><a className="text-secondary" href="#">Seguros</a></li>
                                     <li><a className="text-secondary" href="#">Conoce tu factura</a></li>
@@ -586,7 +587,7 @@ function Header() {
                                     <ul className="dropdown">
                                     <a href="#" className="text-secondary">EFISOLUSIONES</a>
                                         <li className="menu-item-has-children">
-                                        <a className="text-secondary" href="page.html">Revisión técnica</a>
+                                        <Link className="text-secondary" href="/page">Revisión técnica</Link>
                                             <ul className="dropdown">
                                             <li><a href="page.html">Por seguridad y cumplimiento <span
                                                         className="text-secondary">Agenda la revisión</span> de los
@@ -607,7 +608,7 @@ function Header() {
                             <ul className="dropdown">
                                 <a href="#" className="text-secondary">EFISOLUSIONES</a>
                                 <li className="menu-item-has-children">
-                                    <a className="text-secondary" href="page.html">Revisión técnica</a>
+                                    <Link className="text-secondary" href="/page">Revisión técnica</Link>
                                     <ul className="dropdown">
                                         <li><a href="page.html">Por seguridad y cumplimiento <span className="text-secondary">Agenda
                                                     la revisión</span> de las redes internas de gas natural en tu
@@ -759,7 +760,7 @@ function Header() {
                                 <li><a href="#">Qué es el gas natural</a></li>
                                 <li><a href="#">Manual del usuario</a></li>
                                 <li><a href="#">Uso seguro del gas natural</a></li>
-                                <li><a href="page.html">Revisión técnica</a></li>
+                                <li><Link href="/page">Revisión técnica</Link></li>
                                 <li><a href="#">Alianza contra el fraude</a></li>
                                 <li><a href="#">Planes para un servicio seguro</a></li>
                                 <li><a href="#">Nuestro equipos de expertos</a></li>

@@ -1,4 +1,4 @@
-import { getCategories, paginatedPost } from "@/libs/querys";
+import { getArticleHeader, getCategories, paginatedPost } from "@/libs/querys";
 import { useQuery } from "@apollo/client";
 import { useEffect, useState } from "react";
 import Pagination from "../Pagination";
@@ -11,9 +11,9 @@ function Articles() {
     const [category, setCategory] = useState("");
     const [categoryActive, setCategoryActive] = useState(false);
     const postPerPage = 4;
-    const { loading: categoryLoading, data: categoryData } =
-      useQuery(getCategories);
-  
+    const { loading: categoryLoading, data: categoryData } =useQuery(getCategories);
+    const { loading: headerLoading, data: headerData } =useQuery(getArticleHeader);
+
     const { loading, error, data } = useQuery(paginatedPost, {
       variables: {
         categoryName: category,
@@ -21,6 +21,8 @@ function Articles() {
         size: 4,
       },
     });
+
+    if(!headerLoading) console.log(headerData);
   
     useEffect(() => {
       if (!loading && data) {
@@ -51,8 +53,8 @@ function Articles() {
                     <div className="shop-product-fillter mb-50">
                         <div className="totall-product">
                             <h2>
-                                <img className="w-36px mr-10" src="imgs/theme/icons/icon-7.svg" alt="" />
-                                Conéctate con Efigas
+                                <img className="w-36px mr-10" src={headerData?.post?.headerPostFields?.icono1?.link} alt="" />
+                                {headerData?.post?.headerPostFields?.texto1}
                             </h2>
                         </div>
                         <div className="sort-by-product-area">
@@ -62,16 +64,16 @@ function Articles() {
                                             <span><i className="fi-rs-apps"></i>Mostrar:</span>
                                         </div>
                                         <div className="sort-by-dropdown-wrap">
-                                            <span> Todo <i className="fi-rs-angle-small-down"></i></span>
+                                            <span> { (category=="")?headerData?.post?.headerPostFields?.texto2:category } <i className="fi-rs-angle-small-down"></i></span>
                                         </div>
                                     </div>
                                     <div className={`sort-by-dropdown ${categoryActive ? 'show' : ''}`}>
                                         <ul>
+                                            <li onClick={()=> handleCategoryChange("")}><a > {headerData?.post?.headerPostFields?.texto2}  </a> </li>
                                         {!categoryLoading &&
                                             categoryData.categories.nodes.map((category) => {
-                                                console.log(category);
                                             return (
-                                                <li key={category.slug} onClick={()=> handleCategoryChange(category.slug)}><a href="#"> {category.name}</a></li>
+                                                <li key={category.slug} onClick={()=> handleCategoryChange(category.slug)}><a > {category.name}</a></li>
                                             );
                                         })}
                                            

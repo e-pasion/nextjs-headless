@@ -12,14 +12,6 @@ import loadAllLibraries from '@/libs/loader-libraries';
 
 
 export default function App({ Component, pageProps }) {
-
-  
-  
-  useEffect(() => {
-    loadAllLibraries();
-  }, []);
-  
-
   return<>
     <ApolloProvider client={client}>
     <Header/>

@@ -8,11 +8,17 @@ import Business from '@/components/Business'
 import Brilla from '@/components/Brilla'
 import PromoBanners from '@/components/PromoBanners'
 import Modal from '@/components/Modal'
+import loadAllLibraries from '@/libs/loader-libraries'
+import { useEffect } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  useEffect(() => {
+    loadAllLibraries();
+  }, []);
   return (
+    
     <>
     <Head>
         <title>Efigas S.A. E.S.P.</title>
@@ -21,7 +27,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       
-
+      
 
       <main className='main'>
         <Modal/>
