@@ -1,7 +1,6 @@
 import { getModal } from "@/libs/querys";
+import stopLoading from "@/libs/stop-loading";
 import { useQuery } from "@apollo/client";
-import $ from 'jquery';
-
 
 function Modal() {
     const { loading, error, data } = useQuery(getModal);
@@ -10,10 +9,7 @@ function Modal() {
     if (!loading){
         console.log(data);
         //Si el modal cargo, hacer que la ventana de carga desaparezca
-        $('#preloader-active').delay(2000).fadeOut('slow');
-        $('body').delay(450).css({
-            overflow: 'visible',
-        });
+        stopLoading();
     }
 
   return (

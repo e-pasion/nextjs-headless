@@ -22,8 +22,8 @@ export default function Document() {
           <meta name="twitter:site" content="@efigas_oficial" />
           <meta name="twitter:image" content="imgs/theme/efigas-RTR-og-thumb-001.jpg" />
           <meta name="twitter:creator" content="@efigas_oficial" />
-          <link rel="stylesheet" href="css/plugins/animate.min.css" />
-          <link rel="stylesheet" href="css/main.css?v=5.3" />
+          <link rel="stylesheet" href="/css/plugins/animate.min.css" />
+          <link rel="stylesheet" href="/css/main.css?v=5.3" />
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"/> 
 
       </Head>

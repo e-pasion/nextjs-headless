@@ -6045,13 +6045,18 @@ table.no-border thead {
 .archive-header {
   background: url(../imgs/blog/header-bg.png) no-repeat center center;
   border-radius: 20px;
-  padding: 70px 80px;
+  padding: 40px 50px;
   background-size: cover;
+}
+
+.archive-header h1 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 32px;
 }
 
 .tags-list li {
   display: inline-block;
-  margin: 0 15px 0 0;
+  margin: 6px 10px;
 }
 
 .tags-list li a {
@@ -6060,11 +6065,11 @@ table.no-border thead {
   border-radius: 30px;
   -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
-  padding: 10px 20px;
+  padding: 6px 16px;
   border: 1px solid #ececec;
   font-family: "Montserrat", sans-serif;
-  font-size: 17px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .tags-list li a i {
@@ -6073,7 +6078,8 @@ table.no-border thead {
 }
 
 .tags-list li.active a {
-  color: #253D4E;
+  color: #bcbe2d;
+  font-weight: 600;
 }
 
 .post-list article:not(:last-child) {
@@ -6396,6 +6402,7 @@ h6.post-title {
 
 .post-title a {
   color: #253D4E;
+  font-family: "Quicksand", sans-serif;
 }
 
 .post-title a:hover {
@@ -6425,7 +6432,7 @@ h6.post-title {
 .post-thumb .entry-meta a {
   display: inline-block;
   color: #fff !important;
-  background-color: #FDC040;
+  background-color: #bcbe2d;
   border-radius: 4px;
   width: 32px;
   height: 32px;
@@ -8418,7 +8425,7 @@ h6.post-title {
 }
 
 .mobile-header-wrapper-style .mobile-header-wrapper-inner .mobile-header-content-area .mobile-menu-wrap nav .mobile-menu li.menu-item-has-children.active>.menu-expand i::before {
-  content: "\f112";
+  content: "\f139";
 }
 
 .mobile-header-wrapper-style .mobile-header-wrapper-inner .mobile-header-content-area .mobile-menu-wrap nav .mobile-menu li a {
@@ -8559,7 +8566,7 @@ h6.post-title {
   border-radius: 30px;
   line-height: 1;
   -ms-flex-line-pack: center;
-  align-items: center;
+  align-content: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -8567,7 +8574,6 @@ h6.post-title {
 
 .mobile-social-icon a img {
   max-width: 16px;
-  max-height: 16px;
 }
 
 .mobile-social-icon a img:hover {
@@ -9101,7 +9107,7 @@ span.fi-rs-apps {
 }
 
 .main-menu>nav>ul>li ul.mega-menu li .menu-banner-wrap:hover .menu-banner-btn a {
-  background-color: #FD6E6E;
+  background-color: #6caec6;
 }
 
 .main-menu>nav>ul>li:hover>a {
@@ -9914,6 +9920,12 @@ span.fi-rs-apps {
 
 .sidebar-widget .banner-img {
   float: none;
+}
+.loading-post-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .widget_categories li.cat-item,
@@ -12074,6 +12086,11 @@ footer .hotline img {
     background: #233e6f;
     color: #fff;
   }
+  .header-style-1 .header-bottom-bg-color {
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+    background-color: #233e6f;
+  }
 }
 
 /*Mobile landscape*/
@@ -12574,9 +12591,26 @@ footer .hotline img {
 /*small phone*/
 @media only screen and (max-width: 480px) {
   .archive-header {
-    padding: 30px;
+    padding: 16px;
   }
 
+  .tags-list li {
+    display: inline-block;
+    margin: 3px 6px;
+  }
+  
+  .tags-list li a {
+    background-color: #fff;
+    display: inline-block;
+    border-radius: 30px;
+    -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 4px 12px;
+    border: 1px solid #ececec;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+  }
   .mobile-promotion {
     display: block;
     padding: 7px 0;
@@ -13150,17 +13184,13 @@ footer .hotline img {
   }
 }
 
-  .loading-post-container{
-    display: flex;
-    justify-content: center;
-    padding: 130px;
-  }
-
 @media only screen and (min-width: 375px) and (max-width: 667px) {
   .deal .product-title {
     max-width: 100%;
     font-size: 35px;
   }
 }
+
+
 
 /*# sourceMappingURL=main.css.map */

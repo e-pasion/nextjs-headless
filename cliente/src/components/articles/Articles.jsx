@@ -5,12 +5,15 @@ import Pagination from "../Pagination";
 import ArticleCard from "./ArticleCard";
 import Image from "next/image";
 
-function Articles() {
+function Articles({initialPageCount=4,indexPage=true}) {
     const [pageCount, setPageCount] = useState(1);
     const [currentPage, setCurrentPage] = useState(0);
     const [category, setCategory] = useState("");
     const [categoryActive, setCategoryActive] = useState(false);
-    const postPerPage = 4;
+    const [sizeActive,setSizeActive] = useState(false);
+    const [orderActive,setOrderActive] = useState(false);
+    const [order, setOrder] = useState("Recientes");
+    const [postPerPage,setPostPerPage]= useState(initialPageCount);
     const { loading: categoryLoading, data: categoryData } =useQuery(getCategories);
     const { loading: headerLoading, data: headerData } =useQuery(getArticleHeader);
 
@@ -18,7 +21,7 @@ function Articles() {
       variables: {
         categoryName: category,
         offset: currentPage * postPerPage,
-        size: 4,
+        size: postPerPage,
       },
     });
 
@@ -44,9 +47,10 @@ function Articles() {
 
 
 
+
+
   return (
-    <div>
-        <div className="page-content mb-50">
+        <div className={`page-content mb-50 ${indexPage?"":"mt-50"} `}>
         <div className="container">
             <div className="row">
                 <div className="col-lg-12">
@@ -54,10 +58,12 @@ function Articles() {
                         <div className="totall-product">
                             <h2>
                                 <img className="w-36px mr-10" src={headerData?.post?.headerPostFields?.icono1?.link} alt="" />
-                                {headerData?.post?.headerPostFields?.texto1}
+                                {indexPage?headerData?.post?.headerPostFields?.texto1:order}
                             </h2>
                         </div>
-                        <div className="sort-by-product-area">
+                        <div className={`sort-by-product-area ${indexPage?"":"row"}`} >
+                            {
+                                indexPage?  
                                 <div className={`sort-by-cover mr-10 ${categoryActive ? 'show' : ''}`}>
                                     <div onClick={()=>setCategoryActive(!categoryActive)} className="sort-by-product-wrap">
                                         <div className="sort-by">
@@ -79,14 +85,54 @@ function Articles() {
                                            
                                         </ul>
                                     </div>
-                                </div>
+                                </div>:
+                                <>
+                                 <div className={`sort-by-cover mr-10 col-xs-6 col-sm-auto mb-5 ${sizeActive ? 'show' : ''} `}>
+
+                                            <div onClick={()=>setSizeActive(!sizeActive)} className={`sort-by-product-wrap`}>
+                                                <div className="sort-by">
+                                                    <span><i className="fi-rs-apps"></i>Ver:</span>
+                                                </div>
+                                                <div className="sort-by-dropdown-wrap">
+                                                    <span> {postPerPage} <i className="fi-rs-angle-small-down"></i></span>
+                                                </div>
+                                            </div>
+                                            <div className={`sort-by-dropdown ${sizeActive ? 'show' : ''} `}>
+                                                <ul>
+                                                    <li><a onClick={()=> setPostPerPage(20)} className={postPerPage==20?"active":""} >20</a></li>
+                                                    <li><a onClick={()=> setPostPerPage(50)} className={postPerPage==50?"active":""}>50</a></li>
+                                                    <li><a onClick={()=> setPostPerPage(100)} className={postPerPage==100?"active":""}>100</a></li>
+                                                    <li><a onClick={()=> setPostPerPage(200)} className={postPerPage==200?"active":""}>200</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div className={`sort-by-cover col-xs-6 col-sm-auto ${orderActive ? 'show' : ''} `  }>
+                                            <div onClick={()=>setOrderActive(!orderActive)} className="sort-by-product-wrap">
+                                                <div className="sort-by">
+                                                    <span><i className="fi-rs-apps-sort"></i>Ordenar:</span>
+                                                </div>
+                                                <div className="sort-by-dropdown-wrap">
+                                                    <span>{order} <i className="fi-rs-angle-small-down"></i></span>
+                                                </div>
+                                            </div>
+                                            <div className={`sort-by-dropdown ${orderActive ? 'show' : ''}`}>
+                                                <ul>
+                                                    <li><a onClick={()=> setOrder("Destacados")} className={order=="Destacados"?"active":""} >Destacados</a></li>
+                                                    <li><a onClick={()=> setOrder("Recientes")} className={order=="Recientes"?"active":""}>Recientes</a></li>
+                                                    <li><a onClick={()=> setOrder("Más comentados")} className={order=="Más comentados"?"active":""}>Más comentados</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                </>
+                            }
+                                
                             </div>
       
                     </div>
                     <div className="loop-grid">
                         <div className="row">
                         {loading ?<div className="loading-post-container">
-                            <Image src="imgs/theme/bouncing-circles.svg" alt="" width={40} height={40}  />                        
+                            <Image src="/imgs/theme/loading.gif" alt="" width={60} height={60}  />                        
                         </div> : data.posts.nodes.length > 0 ? (
                         data.posts.nodes.map((post) => {
                             return (
@@ -109,30 +155,18 @@ function Articles() {
                     </div>
                     <div className="pagination-area mt-15 mb-sm-5 mb-lg-0">
                         <nav aria-label="Page navigation example">
-                            <ul className="pagination justify-content-center">
+                            <ul className={`pagination ${indexPage? "justify-content-center" : "justify-content-start"}`}>
                                 <Pagination
                                     currentPage={currentPage}
                                     handlePageChange={handlePageChange}
                                     pageCount={pageCount}
                                 />
-                                {/* <li className="page-item">
-                                    <a className="page-link" href="#"><i className="fi-rs-arrow-small-left"></i></a>
-                                </li>
-                                <li className="page-item"><a className="page-link" href="#">1</a></li>
-                                <li className="page-item active"><a className="page-link" href="#">2</a></li>
-                                <li className="page-item"><a className="page-link" href="#">3</a></li>
-                                <li className="page-item"><a className="page-link dot" href="#">...</a></li>
-                                <li className="page-item"><a className="page-link" href="#">6</a></li>
-                                <li className="page-item">
-                                    <a className="page-link" href="#"><i className="fi-rs-arrow-small-right"></i></a>
-                                </li> */}
                             </ul>
                         </nav>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
   )
 }

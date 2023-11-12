@@ -106,7 +106,7 @@ function Header() {
                                         <div className="header-action-icon-2 d-lg-block d-xl-none">
                                             <a href="#">
                                                 <img className="svgInject svg-info" alt="Oficina virtual"
-                                                    src="imgs/theme/icons/icon-officelight.svg" />
+                                                    src="/imgs/theme/icons/icon-officelight.svg" />
                                             </a>
                                         </div>
                                     </div>
@@ -132,7 +132,7 @@ function Header() {
                                                 </a>
                                                 <ul className="sub-menu">
                                                     <li>
-                                                        <a href="#">Conéctate con Efigas<i className="fi-rs-angle-right"></i></a>
+                                                        <Link href="/category">Conéctate con Efigas<i className="fi-rs-angle-right"></i></Link>
                                                         <ul className="level-menu level-menu-modify">
                                                             <li><a href="#">Boletines de prensa</a></li>
                                                             <li><a href="#">Blog</a></li>
@@ -181,7 +181,7 @@ function Header() {
                                                 </ul>
                                             </li>
                                             <li className="position-static">
-                                                <a href="#"><img src="imgs/theme/icons/icon-hot.svg" alt="Hogar"
+                                                <a href="#"><img src="/imgs/theme/icons/icon-hot.svg" alt="Hogar"
                                                         className="mr-5" />Hogar <i className="fi-rs-angle-down"></i></a>
                                                 <ul className="mega-menu">
                                                     <li className="sub-mega-menu sub-mega-menu-width-22">
@@ -222,7 +222,7 @@ function Header() {
                                                     <li className="sub-mega-menu sub-mega-menu-width-34">
                                                         <div className="menu-banner-wrap">
                                                             <a href="#"><img
-                                                                    src="imgs/banner/banner-menu-agua-caliente.png"
+                                                                    src="/imgs/banner/banner-menu-agua-caliente.png"
                                                                     alt="Agua caliente" /></a>
                                                             <div className="menu-banner-content">
                                                                 <h3 className="menu-banner-text text-white">
@@ -243,7 +243,7 @@ function Header() {
                                                 </ul>
                                             </li>
                                             <li className="position-static">
-                                                <a href="#"><img src="imgs/theme/icons/icon-comercio.svg" alt="Comercio"
+                                                <a href="#"><img src="/imgs/theme/icons/icon-comercio.svg" alt="Comercio"
                                                         className="mr-5" />Comercio <i className="fi-rs-angle-down"></i></a>
                                                 <ul className="mega-menu">
                                                     <li className="sub-mega-menu sub-mega-menu-width-22">
@@ -273,7 +273,7 @@ function Header() {
                                                     </li>
                                                     <li className="sub-mega-menu sub-mega-menu-width-34">
                                                         <div className="menu-banner-wrap">
-                                                            <a href="#"><img src="imgs/banner/banner-menu-comercial.png"
+                                                            <a href="#"><img src="/imgs/banner/banner-menu-comercial.png"
                                                                     alt="Portafolio Comercial" /></a>
                                                             <div className="menu-banner-content">
                                                                 <h3 className="menu-banner-text text-white">
@@ -298,7 +298,7 @@ function Header() {
                                                 </ul>
                                             </li>
                                             <li className="position-static">
-                                                <a href="#"><img src="imgs/theme/icons/icon-industria.svg" alt="Industria"
+                                                <a href="#"><img src="/imgs/theme/icons/icon-industria.svg" alt="Industria"
                                                         className="mr-5" />Industrias <i className="fi-rs-angle-down"></i></a>
                                                 <ul className="mega-menu">
                                                     <li className="sub-mega-menu sub-mega-menu-width-22">
@@ -332,7 +332,7 @@ function Header() {
                                                     <li className="sub-mega-menu sub-mega-menu-width-34">
                                                         <div className="menu-banner-wrap">
                                                             <a href="#"><img
-                                                                    src="imgs/banner/banner-menu-efisoluciones.png"
+                                                                    src="/imgs/banner/banner-menu-efisoluciones.png"
                                                                     alt="Efisoluciones" /></a>
                                                             <div className="menu-banner-content">
                                                                 <h3 className="menu-banner-text text-white">
@@ -357,7 +357,7 @@ function Header() {
                                                 </ul>
                                             </li>
                                             <li className="position-static">
-                                                <a href="#"><img src="imgs/theme/icons/icon-constructoras.svg"
+                                                <a href="#"><img src="/imgs/theme/icons/icon-constructoras.svg"
                                                         alt="Constructoras" className="mr-5" />Constructoras <i
                                                         className="fi-rs-angle-down"></i></a>
                                                 <ul className="mega-menu">
@@ -389,7 +389,7 @@ function Header() {
                                                 </ul>
                                             </li>
                                             <li className="position-static">
-                                                <a href="#"><img src="imgs/theme/icons/icon-vehicular.svg"
+                                                <a href="#"><img src="/imgs/theme/icons/icon-vehicular.svg"
                                                         alt="Vehicular" className="mr-5" />Vehicular <i
                                                         className="fi-rs-angle-down"></i></a>
                                                 <ul className="mega-menu">
@@ -426,7 +426,7 @@ function Header() {
                                                     </li>
                                                     <li className="sub-mega-menu sub-mega-menu-width-34">
                                                         <div className="menu-banner-wrap">
-                                                            <a href="#"><img src="imgs/banner/banner-menu-ahorrando.png"
+                                                            <a href="#"><img src="/imgs/banner/banner-menu-ahorrando.png"
                                                                     alt="Ahorrando" /></a>
                                                         </div>
                                                     </li>
@@ -434,7 +434,7 @@ function Header() {
                                             </li>
                                             <li className="position-static">
                                                 <a className="text-success" href="#"><img
-                                                        src="imgs/theme/icons/icon-sostenible.svg" alt="Sostenibilidad"
+                                                        src="/imgs/theme/icons/icon-sostenible.svg" alt="Sostenibilidad"
                                                         className="mr-5" />Sostenibilidad <i className="fi-rs-angle-down"></i></a>
                                                 <ul className="mega-menu">
                                                     <li className="sub-mega-menu sub-mega-menu-width-22">
@@ -482,7 +482,7 @@ function Header() {
                                                     <li className="sub-mega-menu sub-mega-menu-width-34">
                                                         <div className="menu-banner-wrap">
                                                             <a href="#"><img
-                                                                    src="imgs/banner/banner-menu-sustentable.png"
+                                                                    src="/imgs/banner/banner-menu-sustentable.png"
                                                                     alt="Sostenibilidad" /></a>
                                                             <div className="menu-banner-content">
                                                             </div>
@@ -498,7 +498,7 @@ function Header() {
                                 </div>
                             </div>
                             <div className="hotline d-none d-lg-flex">
-                                <img src="imgs/theme/icons/icon-office.svg" alt="hotline" />
+                                <img src="/imgs/theme/icons/icon-office.svg" alt="hotline" />
                                 <p>Oficina virtual<span>Atención en línea</span></p>
                             </div>
                             <div className="header-action-icon-2 d-block d-lg-none">
@@ -720,7 +720,7 @@ function Header() {
                             </ul>
                         </li>
                         <li className="menu-item-has-children">
-                            <a href="#">Conéctate con Efigas</a>
+                            <Link href="/category">Conéctate con Efigas</Link>
                             <ul className="dropdown">
                                 <li><a href="#">Boletines de prensa</a></li>
                                 <li><a href="#">Blog</a></li>
@@ -773,7 +773,7 @@ function Header() {
                     <a className="text-secondary font-weight-bold" href="#">Línea de atención de emergencias 164</a>
                 </div>
                 <div className="d-flex justify-content-center mb-20 mt-20">
-                    <img src="imgs/theme/icons/icon-office.svg" alt="Oficina virtual" />
+                    <img src="/imgs/theme/icons/icon-office.svg" alt="Oficina virtual" />
                     <p className="font-xl text-success font-weight-bold ml-10">Oficina virtual<br/><span
                             className="font-md text-muted">Atención en línea</span></p>
                 </div>
@@ -783,11 +783,11 @@ function Header() {
                 </div>
                 <div className="mobile-social-icon mb-20">
                     <h6 className="mb-15">Síguenos en</h6>
-                    <a href="#"><img src="imgs/theme/icons/icon-facebook-white.svg" alt="" /></a>
-                    <a href="#"><img src="imgs/theme/icons/icon-twitter-white.svg" alt="" /></a>
-                    <a href="#"><img src="imgs/theme/icons/icon-instagram-white.svg" alt="" /></a>
-                    <a href="#"><img src="imgs/theme/icons/icon-pinterest-white.svg" alt="" /></a>
-                    <a href="#"><img src="imgs/theme/icons/icon-youtube-white.svg" alt="" /></a>
+                    <a href="#"><img src="/imgs/theme/icons/icon-facebook-white.svg" alt="" /></a>
+                    <a href="#"><img src="/imgs/theme/icons/icon-twitter-white.svg" alt="" /></a>
+                    <a href="#"><img src="/imgs/theme/icons/icon-instagram-white.svg" alt="" /></a>
+                    <a href="#"><img src="/imgs/theme/icons/icon-pinterest-white.svg" alt="" /></a>
+                    <a href="#"><img src="/imgs/theme/icons/icon-youtube-white.svg" alt="" /></a>
                 </div>
 
                 <div className="site-copyright">2023 Todos los derechos reservados EFIGAS.</div>

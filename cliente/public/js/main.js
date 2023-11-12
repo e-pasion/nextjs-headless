@@ -1,14 +1,13 @@
 (function ($) {
     ("use strict");
     // Page loading
-    // $(window).on("load", function () {
-    //     $("#preloader-active").delay(450).fadeOut("slow");
-    //     $("body").delay(450).css({
-    //         overflow: "visible"
-    //     });
-    //     $("#onloadModal").modal("show");
-    // });
-    $("#onloadModal").modal("show");
+    $(window).on("load", function () {
+        $("#preloader-active").delay(450).fadeOut("slow");
+        $("body").delay(450).css({
+            overflow: "visible"
+        });
+        $("#onloadModal").modal("show");
+    });
     /*-----------------
         Menu Stick
     -----------------*/
@@ -454,28 +453,28 @@
     /*-------------------------------
         Sort by active
     -----------------------------------*/
-    // if ($(".sort-by-product-area").length) {
-    //     var $body = $("body"),
-    //         $cartWrap = $(".sort-by-product-area"),
-    //         $cartContent = $cartWrap.find(".sort-by-dropdown");
-    //     $cartWrap.on("click", ".sort-by-product-wrap", function (e) {
-    //         e.preventDefault();
-    //         var $this = $(this);
-    //         if (!$this.parent().hasClass("show")) {
-    //             $this.siblings(".sort-by-dropdown").addClass("show").parent().addClass("show");
-    //         } else {
-    //             $this.siblings(".sort-by-dropdown").removeClass("show").parent().removeClass("show");
-    //         }
-    //     });
-    //     /*Close When Click Outside*/
-    //     $body.on("click", function (e) {
-    //         var $target = e.target;
-    //         if (!$($target).is(".sort-by-product-area") && !$($target).parents().is(".sort-by-product-area") && $cartWrap.hasClass("show")) {
-    //             $cartWrap.removeClass("show");
-    //             $cartContent.removeClass("show");
-    //         }
-    //     });
-    // }
+    if ($(".sort-by-product-area").length) {
+        var $body = $("body"),
+            $cartWrap = $(".sort-by-product-area"),
+            $cartContent = $cartWrap.find(".sort-by-dropdown");
+        $cartWrap.on("click", ".sort-by-product-wrap", function (e) {
+            e.preventDefault();
+            var $this = $(this);
+            if (!$this.parent().hasClass("show")) {
+                $this.siblings(".sort-by-dropdown").addClass("show").parent().addClass("show");
+            } else {
+                $this.siblings(".sort-by-dropdown").removeClass("show").parent().removeClass("show");
+            }
+        });
+        /*Close When Click Outside*/
+        $body.on("click", function (e) {
+            var $target = e.target;
+            if (!$($target).is(".sort-by-product-area") && !$($target).parents().is(".sort-by-product-area") && $cartWrap.hasClass("show")) {
+                $cartWrap.removeClass("show");
+                $cartContent.removeClass("show");
+            }
+        });
+    }
 
     /*-----------------------
         Shop filter active 
@@ -729,7 +728,7 @@
     $("#news-flash").vTicker({
         speed: 500,
         pause: 3000,
-        // animation: "fade",
+        animation: "fade",
         mousePause: false,
         showItems: 1
     });

@@ -24,7 +24,7 @@ function FabButton() {
         </div>
         <div className="sub-button shadow">
             <a href="#">
-                <img src="imgs/theme/icons/icon-pse.svg" alt="PSE" />
+                <img src="/imgs/theme/icons/icon-pse.svg" alt="PSE" />
             </a>
         </div>
     </div>
