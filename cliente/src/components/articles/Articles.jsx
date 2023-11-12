@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 import Pagination from "../Pagination";
 import ArticleCard from "./ArticleCard";
 import Image from "next/image";
+import ArticleCardHorizontal from "./ArticleCardHorizontal";
 
-function Articles({initialPageCount=4,indexPage=true}) {
+function Articles({initialPageCount=4,initialCategorySlug="", indexPage=true,horizontal=false}) {
     const [pageCount, setPageCount] = useState(1);
     const [currentPage, setCurrentPage] = useState(0);
-    const [category, setCategory] = useState("");
+    const [category, setCategory] = useState(initialCategorySlug);
     const [categoryActive, setCategoryActive] = useState(false);
     const [sizeActive,setSizeActive] = useState(false);
     const [orderActive,setOrderActive] = useState(false);
@@ -25,6 +26,8 @@ function Articles({initialPageCount=4,indexPage=true}) {
       },
     });
 
+    if(initialCategorySlug) console.log(initialCategorySlug);
+
     if(!headerLoading) console.log(headerData);
   
     useEffect(() => {
@@ -34,6 +37,10 @@ function Articles({initialPageCount=4,indexPage=true}) {
         );
       }
     }, [loading, data]);
+
+    useEffect(()=>{
+        if(initialCategorySlug) handleCategoryChange(initialCategorySlug);
+    },[initialCategorySlug])
   
     const handlePageChange = ({ selected }) => {
       setCurrentPage(selected);
@@ -45,7 +52,9 @@ function Articles({initialPageCount=4,indexPage=true}) {
       setCategory(categorySlug);
     };
 
-
+    const getCategoryBySlug = (categories, slug) => {
+        return categories.find((category) => category.slug === slug);
+      };
 
 
 
@@ -58,7 +67,9 @@ function Articles({initialPageCount=4,indexPage=true}) {
                         <div className="totall-product">
                             <h2>
                                 <img className="w-36px mr-10" src={headerData?.post?.headerPostFields?.icono1?.link} alt="" />
-                                {indexPage?headerData?.post?.headerPostFields?.texto1:order}
+                                { initialCategorySlug? !categoryLoading && getCategoryBySlug(categoryData.categories.nodes, initialCategorySlug).name : 
+                                  indexPage?headerData?.post?.headerPostFields?.texto1:order
+                                }
                             </h2>
                         </div>
                         <div className={`sort-by-product-area ${indexPage?"":"row"}`} >
@@ -129,7 +140,32 @@ function Articles({initialPageCount=4,indexPage=true}) {
                             </div>
       
                     </div>
-                    <div className="loop-grid">
+                   { horizontal?
+                   
+                   <div className="loop-grid loop-list pr-30 mb-50">
+                        {loading ?<div className="loading-post-container">
+                            <Image src="/imgs/theme/loading.gif" alt="" width={60} height={60}  />                        
+                        </div> : data.posts.nodes.length > 0 ? (
+                        data.posts.nodes.map((post) => {
+                            return (
+                            <ArticleCardHorizontal
+                                key={post.slug}
+                                title={post.title}
+                                imgLink={post?.featuredImage?.node?.link}
+                                description={post?.excerpt}
+                            />
+                            );
+                        })
+                        ) : (
+                        <div className="w-full h-[24rem] flex justify-center items-center">
+                            <h1>No hay datos para mostrar</h1>
+                        </div>
+                        )}
+                    </div>
+                   :
+                   
+                   
+                   <div className="loop-grid">
                         <div className="row">
                         {loading ?<div className="loading-post-container">
                             <Image src="/imgs/theme/loading.gif" alt="" width={60} height={60}  />                        
@@ -152,7 +188,7 @@ function Articles({initialPageCount=4,indexPage=true}) {
                         )}
                           
                         </div>
-                    </div>
+                    </div>}
                     <div className="pagination-area mt-15 mb-sm-5 mb-lg-0">
                         <nav aria-label="Page navigation example">
                             <ul className={`pagination ${indexPage? "justify-content-center" : "justify-content-start"}`}>

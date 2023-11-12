@@ -64,6 +64,7 @@ function Header() {
                                     <form action="#">
                                         <select className="select-active">
                                             <option>En todo el sitio</option>
+                                            
                                             <option>Hogar</option>
                                             <option>Comercio</option>
                                             <option>Industrias</option>

@@ -1,4 +1,4 @@
-function ArticleCard({slug,title,principalCategory,imgLink}) {
+function ArticleCard({title,principalCategory,imgLink}) {
   return (
     <article className="col-xl-3 col-md-6 hover-up mb-30 animated">
       <div className="post-thumb">

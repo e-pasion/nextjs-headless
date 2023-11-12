@@ -7,6 +7,7 @@ export const paginatedPost = gql`
       nodes {
         slug
         title
+        excerpt
         categories {
           nodes {
             name
